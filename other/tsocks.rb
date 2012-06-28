@@ -3,17 +3,13 @@ require 'formula'
 class Tsocks < Formula
   # The original is http://tsocks.sourceforge.net/
   # This GitHub repo is a maintained fork with OSX support
-  head 'https://github.com/pc/tsocks.git'
-  version '1.9'
   homepage 'http://github.com/pc/tsocks'
-  md5 'ecb2d291b475122391488f063d17db02'
+  head 'https://github.com/pc/tsocks.git'
 
-  def config_file
-    etc / 'tsocks.conf'
-  end
+  depends_on 'autoconf' => :build if MacOS.xcode_version.to_f >= 4.3
 
   def install
-    system "autoconf"
+    system "autoconf", "-v"
     system "./configure", "--prefix=#{prefix}", "--disable-debug", "--disable-dependency-tracking", "--with-conf=#{config_file}"
 
     inreplace("tsocks") { |bin| bin.change_make_var! "LIBDIR", lib }
@@ -30,5 +26,9 @@ class Tsocks < Formula
     puts "If your correctly configured #{config_file}, this should show the ip you have trough the proxy"
     puts 'Your ip through the proxy is:'
     ohai `tsocks curl -sS ifconfig.me 2>&1`.chomp
+  end
+
+  def config_file
+    etc / 'tsocks.conf'
   end
 end
