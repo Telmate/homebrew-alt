@@ -1,6 +1,6 @@
 require 'formula'
 
-class FlexSdk < Formula
+class FlexSdk45 < Formula
   url 'http://fpdownload.adobe.com/pub/flex/sdk/builds/flex4.5/flex_sdk_4.5.1.21328.zip'
   homepage 'http://opensource.adobe.com/wiki/display/flexsdk/Flex+SDK'
   md5 '55a59986092195a88cfe7b5796ec8619'
