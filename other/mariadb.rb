@@ -5,6 +5,11 @@ class Mariadb < Formula
   url 'https://downloads.mariadb.org/f/mariadb-10.0.3/kvm-tarbake-jaunty-x86/mariadb-10.0.3.tar.gz/from/http:/archive.mariadb.org/'
   sha1 'c36c03ad78bdadf9a10e7b695159857d6432726d'
 
+  devel do
+    url 'https://downloads.mariadb.org/f/mariadb-10.0.3/kvm-tarbake-jaunty-x86/mariadb-10.0.3.tar.gz/from/http:/archive.mariadb.org/'
+    sha1 'c36c03ad78bdadf9a10e7b695159857d6432726d'  
+  end
+
   depends_on 'cmake' => :build
   depends_on 'pidof' unless MacOS.version >= :mountain_lion
 
