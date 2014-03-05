@@ -4,7 +4,8 @@ class Mariadb < Formula
   homepage 'http://mariadb.org/'
   url 'https://downloads.mariadb.org/f/mariadb-10.0.3/kvm-tarbake-jaunty-x86/mariadb-10.0.3.tar.gz/from/http:/archive.mariadb.org/'
   sha1 'c36c03ad78bdadf9a10e7b695159857d6432726d'
-
+  version '0.1'
+  
   devel do
     url 'https://downloads.mariadb.org/f/mariadb-10.0.3/kvm-tarbake-jaunty-x86/mariadb-10.0.3.tar.gz/from/http:/archive.mariadb.org/'
     sha1 'c36c03ad78bdadf9a10e7b695159857d6432726d'  
